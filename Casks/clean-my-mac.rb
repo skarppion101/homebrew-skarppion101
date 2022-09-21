@@ -1,7 +1,7 @@
 cask "clean-my-mac" do
   version "4.10.1"
 
-  url "https://disk.yandex.ru/d/WvnABhNiNAUA9Q"
+  url "https://vk.com/s/v1/doc/tmEGQ-n0pStHp19zZiZASm-h-kGKypVqZyXJX0JcDUHzZZcUu5Y"
   name "CleanMyMac X"
   desc "CleanMyMac X"
   homepage "https://cleanmymac.macpaw.com/20"
