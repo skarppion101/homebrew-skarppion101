@@ -1,10 +1,34 @@
-# Homebrew Skarppion101
+# Private homebrew tap
+Can install cracked apps like so :)
 
-## How do I install these formulae?
 
-`brew install homebrew/skarppion101/<formula>`
+## Preparing
+First, add this tap to homebrew taps
+```bash
+brew tap homebrew/skarppion101 https://github.com/skarppion101/homebrew-skarppion101
+```
 
-Or `brew tap homebrew/skarppion101` and then `brew install <formula>`.
+
+## Installing casks
+Then you can install formulas and casks like so
+```bash
+brew install --cask homebrew/skarppion101/alfred
+```
+
+```bash
+brew install --cask homebrew/skarppion101/be-focus-pro
+```
+
+```bash
+brew install --cask homebrew/skarppion101/transmit
+```
+
+
+## Casks below are not working
+```bash
+brew install --cask homebrew/skarppion101/clean-my-mac
+```
+
 
 ## Documentation
 
