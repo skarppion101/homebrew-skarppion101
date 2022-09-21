@@ -1,12 +1,16 @@
-cask "clean-my-mac" do
-  version "4.10.6"
-  sha256 "29a78ba2624bb8ae19abf52b178269a685ee29b49a88fc22ba2e8035a6e739f1"
+cask "clean-my-mac-official" do
+  version "4.11.3,41103.0.2209061539"
 
-  url "https://vk.com/s/v1/doc/ZQbT4m3jvkMHUpHDEEMuudMu_M5zDqxfKjJrWmkCZxdDj7VBY0Q"
+  url "https://dl.devmate.com/com.macpaw.CleanMyMac#{version.major}/CleanMyMacX.dmg"
   name "CleanMyMac X"
   desc "Tool to remove unnecessary files and folders from disk"
-  homepage "https://appstorrent.ru/6-cleanmymac.html"
-  
+  homepage "https://macpaw.com/cleanmymac"
+
+  # livecheck do
+  #   url "https://updates.devmate.com/com.macpaw.CleanMyMac#{version.major}.xml"
+  #   strategy :sparkle
+  # end
+
   app "CleanMyMac X.app"
 
   uninstall delete:     [
