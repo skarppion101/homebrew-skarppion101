@@ -1,20 +1,64 @@
 cask "clean-my-mac" do
-  version "4.10.1"
+  version "4.10.6"
+  sha256 "2c0e86e766c0019f1776d44c3f3e449a67bb0274443e93c898b4162f6665b6e9"
 
-  url "https://vk.com/s/v1/doc/H8fYtlAIgHjcoRAk4DDwtMIkKsNT64H3uL0TEmcOy2QwKixZrgA"
+  url "https://vk.com/s/v1/doc/tmEGQ-n0pStHp19zZiZASm-h-kGKypVqZyXJX0JcDUHzZZcUu5Y"
   name "CleanMyMac X"
-  desc "CleanMyMac X"
+  desc "Tool to remove unnecessary files and folders from disk"
   homepage "https://appstorrent.ru/6-cleanmymac.html"
+
+  auto_updates false
 
   app "CleanMyMac X.app"
 
+  uninstall delete:     [
+    "/Library/LaunchDaemons/com.macpaw.CleanMyMac#{version.major}.Agent.plist",
+    "/Library/PrivilegedHelperTools/com.macpaw.CleanMyMac#{version.major}.Agent",
+  ],
+            launchctl:  [
+              "com.macpaw.CleanMyMac#{version.major}.Agent",
+              "com.macpaw.CleanMyMac#{version.major}.HealthMonitor",
+              "com.macpaw.CleanMyMac#{version.major}.Menu",
+              "com.macpaw.CleanMyMac#{version.major}.Scheduler",
+              "com.macpaw.CleanMyMac#{version.major}.Updater",
+            ],
+            login_item: "CleanMyMac #{version.major} Menu",
+            quit:       [
+              "com.macpaw.CleanMyMac#{version.major}",
+              "com.macpaw.CleanMyMac#{version.major}.HealthMonitor",
+              "com.macpaw.CleanMyMac#{version.major}.Menu",
+            ]
+
   zap trash: [
+    "/Users/Shared/CleanMyMac X Menu",
+    "/Users/Shared/CleanMyMac X",
+    "~/Library/Application Scripts/com.macpaw.CleanMyMac#{version.major}.CleanMyMacWidget",
+    "~/Library/Application Support/CleanMyMac X Menu",
     "~/Library/Application Support/CleanMyMac X",
-    "~/Library/Caches/CleanMyMac X HealthMonitor",
-    "~/Library/Caches/com.macpaw.CleanMyMac4",
-    "~/Library/Preferences/com.macpaw.CleanMyMac4.HealthMonitor.plist",
-    "~/Library/Preferences/com.macpaw.CleanMyMac4.Menu.plist",
-    "~/Library/Preferences/com.macpaw.CleanMyMac4.plist",
-    "~/Library/Preferences/S8EX82NJP6.com.macpaw.CleanMyMac4.plist",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.macpaw.cleanmymac#{version.major}.scheduler.sfl*",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.macpaw.cleanmymac#{version.major}.sfl*",
+    "~/Library/Caches/CleanMyMac #{version.major}",
+    "~/Library/Caches/com.apple.helpd/SDMHelpData/Other/English/HelpSDMIndexFile/com.macpaw.CleanMyMac#{version.major}.help*",
+    "~/Library/Caches/com.macpaw.CleanMyMac#{version.major}.HealthMonitor",
+    "~/Library/Caches/com.macpaw.CleanMyMac#{version.major}.KnowledgeBase",
+    "~/Library/Caches/com.macpaw.CleanMyMac#{version.major}.Menu",
+    "~/Library/Caches/com.macpaw.CleanMyMac#{version.major}.Scheduler",
+    "~/Library/Caches/com.macpaw.CleanMyMac#{version.major}.Updater",
+    "~/Library/Caches/com.macpaw.CleanMyMac#{version.major}",
+    "~/Library/Containers/com.macpaw.CleanMyMac#{version.major}.CleanMyMacWidget",
+    "~/Library/Group Containers/*.com.macpaw.CleanMyMac#{version.major}",
+    "~/Library/LaunchAgents/com.macpaw.CleanMyMac#{version.major}.HealthMonitor.plist",
+    "~/Library/LaunchAgents/com.macpaw.CleanMyMac#{version.major}.Updater.plist",
+    "~/Library/Logs/CleanMyMac #{version.major}.log",
+    "~/Library/Logs/CleanMyMac X Menu/HealthMonitor",
+    "~/Library/Logs/com.macpaw.CleanMyMac#{version.major}",
+    "~/Library/Preferences/com.macpaw.CleanMyMac-#{version.major}-Helper.plist",
+    "~/Library/Preferences/com.macpaw.CleanMyMac#{version.major}.HealthMonitor.plist",
+    "~/Library/Preferences/com.macpaw.CleanMyMac#{version.major}.KnowledgeBase.plist",
+    "~/Library/Preferences/com.macpaw.cleanmymac#{version.major}.Menu.plist",
+    "~/Library/Preferences/com.macpaw.CleanMyMac#{version.major}.plist",
+    "~/Library/Preferences/com.macpaw.CleanMyMac#{version.major}.Scheduler.plist",
+    "~/Library/WebKit/com.macpaw.CleanMyMac#{version.major}",
+    "~/Pictures/Photos Library.photoslibrary/private/com.macpaw.CleanMyMac#{version.major}",
   ]
 end
