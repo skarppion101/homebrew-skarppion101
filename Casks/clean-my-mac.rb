@@ -1,29 +1,17 @@
 cask "clean-my-mac" do
   version "4.10.1"
 
-  url "https://vk.com/s/v1/doc/tmEGQ-n0pStHp19zZiZASm-h-kGKypVqZyXJX0JcDUHzZZcUu5Y"
+  url "https://vk.com/s/v1/doc/H8fYtlAIgHjcoRAk4DDwtMIkKsNT64H3uL0TEmcOy2QwKixZrgA"
   name "CleanMyMac X"
   desc "CleanMyMac X"
-  homepage "https://cleanmymac.macpaw.com/20"
-
-  # livecheck do
-  #   url "http://1clipboard.io/download/darwin/"
-  #   regex(%r{/v?(\d+(?:\.\d+)+)/1Clipboard\.zip}i)
-  # end
+  homepage "https://appstorrent.ru/6-cleanmymac.html"
 
   app "CleanMyMac X.app"
 
-  # uninstall quit: [
-  #   "com.ngwin.1clipboard",
-  #   "com.ngwin.1clipboardhelper",
-  # ]
-
   zap trash: [
-    # "~/Library/Application Support/1Clipboard",
-    # "~/Library/Application Support/com.ngwin.1clipboard.ShipIt",
-    # "~/Library/Caches/1Clipboard",
-    # "~/Library/Caches/com.ngwin.1clipboard",
-    # "~/Library/Saved Application State/com.ngwin.1clipboard.savedState",
+    "~/Library/Application Support/CleanMyMac X",
+    "~/Library/Caches/CleanMyMac X HealthMonitor",
+    "~/Library/Caches/com.macpaw.CleanMyMac4",
     "~/Library/Preferences/com.macpaw.CleanMyMac4.HealthMonitor.plist",
     "~/Library/Preferences/com.macpaw.CleanMyMac4.Menu.plist",
     "~/Library/Preferences/com.macpaw.CleanMyMac4.plist",
